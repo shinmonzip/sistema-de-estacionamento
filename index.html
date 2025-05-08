@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Estacionamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistema de Estacionamento</h1>
+        </header>
+        
+        <main>
+            <section class="entrada-saida">
+                <div class="form-container">
+                    <h2>Entrada de Veículo</h2>
+                    <form id="entradaForm">
+                        <div class="form-group">
+                            <label for="placaEntrada">Placa (Formato LLLNLNN):</label>
+                            <input type="text" id="placaEntrada" maxlength="7" placeholder="ABC1D23" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horaEntrada">Hora de Entrada:</label>
+                            <input type="time" id="horaEntrada" required>
+                        </div>
+                        <button type="submit">Registrar Entrada</button>
+                    </form>
+                </div>
+
+                <div class="form-container">
+                    <h2>Saída de Veículo</h2>
+                    <form id="saidaForm">
+                        <div class="form-group">
+                            <label for="placaSaida">Placa:</label>
+                            <input type="text" id="placaSaida" maxlength="7" placeholder="ABC1D23" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="horaSaida">Hora de Saída:</label>
+                            <input type="time" id="horaSaida" required>
+                        </div>
+                        <button type="submit">Registrar Saída</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="resultado">
+                <h2>Resultado</h2>
+                <div id="resumo" class="hidden">
+                    <p><strong>Placa:</strong> <span id="placaResultado"></span></p>
+                    <p><strong>Estado de Origem:</strong> <span id="estadoOrigem"></span></p>
+                    <p><strong>Tempo de Permanência:</strong> <span id="tempoPermanencia"></span></p>
+                    <p><strong>Valor a Pagar:</strong> <span id="valorPagar"></span></p>
+                </div>
+                <div id="mensagemErro" class="error hidden"></div>
+            </section>
+
+            <section class="vagas">
+                <h2>Visualização do Estacionamento</h2>
+                <div class="controles-vagas">
+                    <label for="linhas">Linhas:</label>
+                    <input type="number" id="linhas" min="1" max="10" value="4">
+                    <label for="colunas">Colunas:</label>
+                    <input type="number" id="colunas" min="1" max="10" value="5">
+                    <button id="criarEstacionamento">Criar Estacionamento</button>
+                </div>
+                <div id="estacionamento" class="matriz-vagas"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Sistema de Gerenciamento de Estacionamento &copy; 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
