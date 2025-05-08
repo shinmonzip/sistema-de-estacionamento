@@ -1,59 +1,84 @@
-# Sistema de Gerenciamento de Estacionamento
 
-Este é um sistema simples de gerenciamento de estacionamento desenvolvido com JavaScript, HTML e CSS. O sistema permite registrar a entrada e saída de veículos, calcular o tempo de permanência e o valor a ser pago, além de gerenciar as vagas disponíveis.
+# 🅿️ Sistema de Gerenciamento de Estacionamento
 
-## Funcionalidades
+Um sistema web interativo para controlar entradas, saídas e cobrança em um estacionamento, desenvolvido com **HTML, CSS e JavaScript puro**. Idealizado como solução prática para desafios de lógica computacional e estruturas discretas.
 
-### Validação de Ticket
+---
 
-- Registro de horário de entrada e saída
-- Cálculo automático do tempo de permanência
-- Cálculo do valor a ser pago com base nas seguintes regras:
-  - Tolerância de 15 minutos (não cobra se passar até esse tempo)
-  - Até 3 horas: cobra um valor fixo
-  - Após 3 horas: cobra valor adicional por hora ou fração
+## ⚙️ Funcionalidades Principais
 
-### Gerenciamento de Vagas
+### 🧾 Validação de Ticket
+- Registro da **hora de entrada e saída**
+- Cálculo automático do **tempo de permanência**
+- Cálculo do **valor a ser pago**, com base nas regras:
+  - ⏱️ **15 minutos de tolerância** (sem cobrança)
+  - 🕒 Até **3 horas**: valor fixo
+  - ➕ Após 3 horas: cobrança **por hora adicional ou fração**
 
-- Representação visual do estacionamento com matriz bidimensional
-- Alocação automática na primeira vaga livre
-- Liberação de vaga ao registrar saída
-- Visualização de vagas livres e ocupadas com cores diferentes
+### 🅿️ Gerenciamento de Vagas
+- Representação visual em **matriz bidimensional (m x n)**
+- Alocação automática na **primeira vaga livre**
+- Liberação automática da vaga ao registrar a saída
+- Vagas livres e ocupadas destacadas com **cores diferentes**
 
-### Validação de Placas
+### 🔍 Validação de Placas
+- Suporte ao padrão **Mercosul**: `LLLNLNN` (ex: ABC1D23)
+- Identificação do **estado de origem** pela placa
+- Verificação se a placa pertence aos **3 estados sorteados** para o grupo
 
-- Formato Mercosul: LLLNLNN (ex: ABC1D23)
-- Identificação do estado de origem da placa
-- Validação se a placa pertence a uma das regiões permitidas
+---
 
-## Como Usar
+## 🖥️ Tecnologias Utilizadas
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
-1. **Configuração do Estacionamento**
+---
 
-   - Defina o número de linhas e colunas
-   - Clique em "Criar Estacionamento"
+## 🚀 Como Usar
 
-2. **Registrar Entrada**
+### 1. Configurar o Estacionamento
+- Defina o número de **linhas e colunas**
+- Clique em **"Criar Estacionamento"**
 
-   - Insira a placa do veículo no formato LLLNLNN
-   - Informe a hora de entrada
-   - Clique em "Registrar Entrada"
+### 2. Registrar Entrada
+- Informe a **placa do veículo** (formato válido)
+- Defina a **hora de entrada**
+- Clique em **"Registrar Entrada"**
 
-3. **Registrar Saída**
-   - Insira a placa do veículo
-   - Informe a hora de saída
-   - Clique em "Registrar Saída"
-   - O sistema exibirá o tempo de permanência e o valor a pagar
+### 3. Registrar Saída
+- Informe a **placa do veículo**
+- Defina a **hora de saída**
+- O sistema exibirá:
+  - Estado da placa
+  - Tempo total de permanência
+  - Valor total a pagar
 
-## Configuração
+---
 
-Você pode ajustar os seguintes parâmetros no arquivo `script.js`:
+## 🔧 Parâmetros Configuráveis (em `script.js`)
+- `VALOR_FIXO_ATE_3_HORAS`: Valor base até 3h
+- `VALOR_HORA_ADICIONAL`: Valor adicional por hora extra
+- `TEMPO_TOLERANCIA`: Minutos de tolerância sem cobrança
+- `ESTADOS_PERMITIDOS`: Lista com os **3 estados permitidos** (ex: `['RJ', 'SP', 'MG']`)
 
-- `VALOR_FIXO_ATE_3_HORAS`: Valor em R$ para até 3 horas de permanência
-- `VALOR_HORA_ADICIONAL`: Valor em R$ por hora adicional
-- `TEMPO_TOLERANCIA`: Tolerância em minutos
-- `ESTADOS_PERMITIDOS`: Lista de estados permitidos (substituir pelos 3 estados sorteados)
+---
 
-## Executando o Sistema
+## 📦 Execução Local
 
-Basta abrir o arquivo `index.html` em qualquer navegador moderno.
+1. Baixe ou clone o repositório
+2. Abra o arquivo `index.html` em qualquer navegador moderno
+3. Não é necessária nenhuma instalação ou dependência externa
+
+---
+
+## 📌 Observações
+
+- O sistema trata situações como: estacionamento lotado, placas inválidas, duplicidade de entrada, entre outros.
+- Todos os dados são manipulados em tempo real na interface — **sem backend**.
+
+---
+
+## 📘 Licença
+
+Projeto desenvolvido com fins acadêmicos, voltado para a disciplina de **Resolução de Problemas (Matemática Discreta)**.
