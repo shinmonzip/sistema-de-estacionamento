@@ -1,7 +1,7 @@
 
 # 🅿️ Sistema de Gerenciamento de Estacionamento
 
-Um sistema web interativo para controlar entradas, saídas e cobrança em um estacionamento, desenvolvido com **HTML, CSS e JavaScript (vanilla)**. Idealizado como solução prática para desafios de lógica computacional e estruturas discretas.
+Um sistema web interativo para controlar entradas, saídas e cobrança em um estacionamento. Idealizado como solução prática para desafios de lógica computacional e estruturas discretas.
 
 ---
 
