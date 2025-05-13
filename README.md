@@ -60,7 +60,7 @@ Um sistema web interativo para controlar entradas, saídas e cobrança em um est
 - `VALOR_FIXO_ATE_3_HORAS`: Valor base até 3h
 - `VALOR_HORA_ADICIONAL`: Valor adicional por hora extra
 - `TEMPO_TOLERANCIA`: Minutos de tolerância sem cobrança
-- `ESTADOS_PERMITIDOS`: Lista com os **3 estados permitidos** (ex: `['RJ', 'SP', 'MG']`)
+- `ESTADOS_PERMITIDOS`: Lista com os **3 estados permitidos** (ex: `['PR', 'RGS', 'SC']`)
 
 ---
 
