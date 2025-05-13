@@ -4,29 +4,30 @@ const VALOR_HORA_ADICIONAL = 5;    // Valor em R$ por hora adicional
 const TEMPO_TOLERANCIA = 15;       // Tolerância em minutos
 
 // Lista de estados permitidos para validação de placas
-let ESTADOS_PERMITIDOS = ['SP', 'RJ', 'MG'];
+let ESTADOS_PERMITIDOS = ['PR', 'RS', 'SC'];
 
 // Banco de dados de prefixos de placas e seus estados
 const prefixosEstados = {
-    // São Paulo
-    'AAA': 'SP', 'AAB': 'SP', 'AAC': 'SP', 'AAD': 'SP', 'AAE': 'SP',
-    'AAF': 'SP', 'AAG': 'SP', 'AAH': 'SP', 'AAI': 'SP', 'AAJ': 'SP',
-    'AKL': 'SP', 'AKM': 'SP', 'AKN': 'SP', 'AKO': 'SP', 'AKP': 'SP',
-    'AKQ': 'SP', 'AKR': 'SP', 'AKS': 'SP', 'AKT': 'SP', 'AKU': 'SP',
-    'BFA': 'SP', 'BFB': 'SP', 'BFC': 'SP', 'BFD': 'SP', 'BFE': 'SP',
+    // Paraná (PR)
+    'AAA': 'PR', 'AAB': 'PR', 'AAC': 'PR', 'AAD': 'PR', 'AAE': 'PR',
+    'AAF': 'PR', 'AAG': 'PR', 'AAH': 'PR', 'AAI': 'PR', 'AAJ': 'PR',
+    'ACA': 'PR', 'ACB': 'PR', 'ACC': 'PR', 'ACD': 'PR', 'ACE': 'PR',
+    'ACF': 'PR', 'ACG': 'PR', 'ACH': 'PR', 'ACI': 'PR', 'ACJ': 'PR',
+    'AEA': 'PR', 'AEB': 'PR', 'AEC': 'PR', 'AED': 'PR', 'AEE': 'PR',
     
-    // Rio de Janeiro
-    'KVE': 'RJ', 'KVF': 'RJ', 'KVG': 'RJ', 'KVH': 'RJ', 'KVI': 'RJ',
-    'KVJ': 'RJ', 'KVK': 'RJ', 'KVL': 'RJ', 'KVM': 'RJ', 'KVN': 'RJ',
-    'LUI': 'RJ', 'LUJ': 'RJ', 'LUK': 'RJ', 'LUL': 'RJ', 'LUM': 'RJ',
-    'LUN': 'RJ', 'LUO': 'RJ', 'LUP': 'RJ', 'LUQ': 'RJ', 'LUR': 'RJ',
+    // Rio Grande do Sul (RS)
+    'IAQ': 'RS', 'IAR': 'RS', 'IAS': 'RS', 'IAT': 'RS', 'IAU': 'RS',
+    'IAV': 'RS', 'IAW': 'RS', 'IAX': 'RS', 'IAY': 'RS', 'IAZ': 'RS',
+    'IQA': 'RS', 'IQB': 'RS', 'IQC': 'RS', 'IQD': 'RS', 'IQE': 'RS',
+    'IQF': 'RS', 'IQG': 'RS', 'IQH': 'RS', 'IQI': 'RS', 'IQJ': 'RS',
+    'IVA': 'RS', 'IVB': 'RS', 'IVC': 'RS', 'IVD': 'RS', 'IVE': 'RS',
     
-    // Minas Gerais
-    'GKJ': 'MG', 'GKK': 'MG', 'GKL': 'MG', 'GKM': 'MG', 'GKN': 'MG',
-    'GKO': 'MG', 'GKP': 'MG', 'GKQ': 'MG', 'GKR': 'MG', 'GKS': 'MG',
-    'HMG': 'MG', 'HMH': 'MG', 'HMI': 'MG', 'HMJ': 'MG', 'HMK': 'MG',
-    'HML': 'MG', 'HMM': 'MG', 'HMN': 'MG', 'HMO': 'MG', 'HMP': 'MG',
-    
+    // Santa Catarina (SC)
+    'MKA': 'SC', 'MKB': 'SC', 'MKC': 'SC', 'MKD': 'SC', 'MKE': 'SC',
+    'MKF': 'SC', 'MKG': 'SC', 'MKH': 'SC', 'MKI': 'SC', 'MKJ': 'SC',
+    'MMM': 'SC', 'MMN': 'SC', 'MMO': 'SC', 'MMP': 'SC', 'MMQ': 'SC',
+    'MMR': 'SC', 'MMS': 'SC', 'MMT': 'SC', 'MMU': 'SC', 'MMV': 'SC',
+    'QHA': 'SC', 'QHB': 'SC', 'QHC': 'SC', 'QHD': 'SC', 'QHE': 'SC',
 };
 
 // Estado do estacionamento
